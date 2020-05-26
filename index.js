@@ -24,7 +24,7 @@ io.on('connection', socket => {
 
         mensajeRecibido = message.mensaje
             //Send message to only that particular room
-        socket.in(receiverChatID).emit('send_message', {
+        socket.emit('send_message', {
 
             mensajeRecibido
 
