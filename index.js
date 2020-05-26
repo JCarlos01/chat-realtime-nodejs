@@ -18,15 +18,19 @@ io.on('connection', socket => {
 
     //Send message to only a particular user
     socket.on('send_message', message => {
-        receiverChatID = message.receiverChatID
-        senderChatID = message.senderChatID
-        content = message.content
+        // receiverChatID = message.receiverChatID
+        // senderChatID = message.senderChatID
+        // content = message.content
 
-        //Send message to only that particular room
-        socket.in(receiverChatID).emit('receive_message', {
-            'content': content,
-            'senderChatID': senderChatID,
-            'receiverChatID': receiverChatID,
+        mensajeRecibido = message.mensaje
+            //Send message to only that particular room
+        socket.in(receiverChatID).emit('send_message', {
+
+            mensajeRecibido
+
+            // 'content': content,
+            // 'senderChatID': senderChatID,
+            // 'receiverChatID': receiverChatID,
         })
     })
 });
