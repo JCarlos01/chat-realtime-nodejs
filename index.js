@@ -1,3 +1,8 @@
+//=================================
+// Prueba de sockets con flutter
+// Enviar y recibir un mismo mensaje
+//=================================
+
 const app = require('express')()
 const http = require('http').createServer(app)
 const io = require('socket.io')(http);
